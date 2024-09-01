@@ -1,6 +1,8 @@
 
 # NOTAS DE DESARROLLO #
 
+# TOPO-GIGIO v0.0.5 #
+
 	(31/08/24)
 	- Inicio del prj.
 	- Agregado script de preparacion (Todavía en testeo)
