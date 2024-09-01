@@ -6,7 +6,7 @@ sleep 2
 # Si binutils y python3-venv no están instalados
 if [[ $(sudo dpkg --get-selections | grep binutils) == "" && $(sudo dpkg --get-selections | grep python3-venv) == "" ]]; then
 	sudo apt update
-	sudo apt install binutils python3-venv
+	sudo apt install -y binutils python3-venv
 fi
 
 # Si no se encuentra el dir ".venv"
