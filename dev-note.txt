@@ -3,3 +3,4 @@
 
 	(31/08/24)
 	- Inicio del prj.
+	- Agregado script de preparacion (Todavía en testeo)
