@@ -12,7 +12,7 @@ Trojano de acceso remoto (RAT) con Python.
 		* Configparser
 		* Pyinstaller
 
-# Script de preparacion:
+# Script de preparación:
 Puede ejecutar el script "prep-ent.sh" una vez (o cada que elimine el directorio oculto '.venv') para preparar el entorno descargando los paquetes necesarios de APT y de PIP3 para cumplimentar las dependencias.
 
 Bash:
@@ -20,5 +20,5 @@ Bash:
 	sudo chmod +x prep-ent.sh && ./prep-ent.sh
 	```
 
-# Mini demostración:
+# Demostración:
 ![Demo](https://github.com/bbkmg256/topo-gigio/raw/main/assets/demo.gif)
