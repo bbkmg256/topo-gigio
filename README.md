@@ -17,8 +17,7 @@ Puede ejecutar el script "prep-ent.sh" una vez (o cada que limine el directorio 
 
 Bash:
 	```
-	sudo chmod +x prep-ent.sh
-	./prep-ent.sh
+	sudo chmod +x prep-ent.sh && ./prep-ent.sh
 	```
 
 # Mini demostración:
