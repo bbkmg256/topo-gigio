@@ -6,3 +6,10 @@
 	(31/08/24)
 	- Inicio del prj.
 	- Agregado script de preparacion (Todavía en testeo)
+
+# TOPO-GIGIO v0.0.6 #
+
+	(03/09/24)
+	- Agregado script de preparacion de entorno
+	- Solucionado problema logico en el script de preparacion de entorno
+ 	- Modificado el codigo del cliente y el servidor (solucionado problema de desfase entre los mismos y mejora de legibilidad del codigo del servidor)
